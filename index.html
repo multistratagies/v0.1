@@ -20,6 +20,8 @@
       --green: #67d29a;
       --green-soft: rgba(103, 210, 154, 0.12);
       --shadow: rgba(0, 0, 0, 0.26);
+      --danger: #ff867f;
+      --input: rgba(255,255,255,0.03);
     }
 
     * { box-sizing: border-box; }
@@ -36,6 +38,7 @@
     img { max-width: 100%; display: block; }
     h1, h2, h3, p { margin: 0; }
     ul { margin: 0; padding: 0; list-style: none; }
+    input, button { font: inherit; }
 
     .shell {
       width: min(1180px, calc(100% - 48px));
@@ -108,6 +111,7 @@
       transition: 180ms ease;
       cursor: pointer;
       white-space: nowrap;
+      text-decoration: none;
     }
 
     .btn-primary {
@@ -123,6 +127,8 @@
       color: var(--text);
       background: rgba(255, 255, 255, 0.02);
     }
+
+    .btn-full { width: 100%; }
 
     .hero {
       padding: 72px 0 40px;
@@ -359,6 +365,186 @@
       letter-spacing: 0.18em;
       font-size: 11px;
       color: #d9e3df;
+    }
+
+    .auth-shell {
+      padding: 64px 0 24px;
+    }
+
+    .auth-layout {
+      display: grid;
+      grid-template-columns: 1fr 520px;
+      gap: 32px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(17, 44, 40, 0.8), rgba(10, 21, 20, 0.9));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 32px 65px rgba(0,0,0,0.2);
+    }
+
+    .auth-copy {
+      padding: 18px 10px 18px 16px;
+    }
+
+    .auth-copy .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .auth-copy h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+    }
+
+    .auth-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #edf5f0;
+      font-size: 15px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(103, 210, 154, 0.12);
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .auth-card {
+      background: rgba(7, 26, 24, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 28px 24px;
+    }
+
+    .auth-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(215,184,115,0.12);
+      color: var(--gold-2);
+      border: 1px solid rgba(215,184,115,0.26);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .auth-card h3 {
+      margin-top: 18px;
+      font-size: 2rem;
+      letter-spacing: -0.05em;
+    }
+
+    .auth-card p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .auth-form {
+      margin-top: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: #dfece6;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--input);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field input:focus {
+      border-color: rgba(215, 184, 115, 0.56);
+      box-shadow: 0 0 0 3px rgba(215, 184, 115, 0.12);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .remember {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .remember input {
+      width: 15px;
+      height: 15px;
+      accent-color: var(--gold);
+    }
+
+    .row a {
+      color: var(--gold-2);
+    }
+
+    .form-message {
+      min-height: 20px;
+      font-size: 13px;
+      color: var(--danger);
+    }
+
+    .form-message.success {
+      color: var(--green);
+    }
+
+    .demo-box {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.015);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .demo-box strong {
+      color: var(--text);
     }
 
     section {
@@ -632,7 +818,6 @@
 
     .price-card .btn {
       width: 100%;
-      margin-top: auto;
       margin-top: 24px;
     }
 
@@ -736,6 +921,7 @@
     }
 
     @media (max-width: 980px) {
+      .auth-layout,
       .hero-grid,
       .mix-panel,
       .section-head,
@@ -768,6 +954,8 @@
       .table-row { grid-template-columns: 1fr 1fr; }
       .table-row > :last-child { grid-column: 1 / -1; }
       .cta-box { padding: 20px; }
+      .auth-layout { padding: 18px; }
+      .auth-card { padding: 20px 18px; }
     }
   </style>
 </head>
@@ -788,13 +976,64 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-secondary" href="#pricing">Login</a>
-        <a class="btn btn-primary" href="#cta">Start investing</a>
+        <a class="btn btn-secondary" href="#login">Login</a>
+        <a class="btn btn-primary" href="#login">Start investing</a>
       </div>
     </div>
   </header>
 
   <main id="top">
+    <section class="shell auth-shell" id="login">
+      <div class="auth-layout">
+        <div class="auth-copy">
+          <div class="eyebrow">Secure member access</div>
+          <h2>Access your investing dashboard and goals in one place.</h2>
+          <p>Review your portfolio, monitor performance, and keep your long-term strategy aligned with the market — all behind a secure, private login.</p>
+
+          <ul class="feature-list" aria-label="Login benefits">
+            <li>Track portfolio growth with real-time dashboards</li>
+            <li>Review strategy updates and quarterly guidance</li>
+            <li>Manage allocation decisions from one secure workspace</li>
+          </ul>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-badge">Member login</div>
+          <h3>Welcome back</h3>
+          <p>Sign in to continue managing your equity strategy.</p>
+
+          <form id="loginForm" class="auth-form" novalidate>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+            </div>
+
+            <div class="row">
+              <label class="remember" for="remember">
+                <input id="remember" type="checkbox" checked>
+                <span>Remember me</span>
+              </label>
+              <a href="#top">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Sign in</button>
+            <div id="formMessage" class="form-message" aria-live="polite"></div>
+          </form>
+
+          <div class="demo-box">
+            <strong>Demo login:</strong><br>
+            Email: demo@equitysecure.com<br>
+            Password: securepass123
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="hero shell" id="platform">
       <div class="hero-grid">
         <div>
@@ -803,7 +1042,7 @@
           <p class="hero-copy">EquitySecure helps investors identify strong growth companies, optimize long-term portfolios, and build a clearer path to wealth without the noise and guesswork.</p>
 
           <div class="hero-actions">
-            <a href="#cta" class="btn btn-primary">Get started</a>
+            <a href="#login" class="btn btn-primary">Get started</a>
             <a href="#results" class="btn btn-secondary">See market results</a>
           </div>
 
@@ -991,7 +1230,7 @@
             <li>Weekly market briefings</li>
             <li>Basic equity insights</li>
           </ul>
-          <a href="#cta" class="btn btn-secondary">Start now</a>
+          <a href="#login" class="btn btn-secondary">Start now</a>
         </article>
 
         <article class="price-card highlight">
@@ -999,97 +1238,162 @@
           <div class="price">$149<small>/mo</small></div>
           <p>For investors building a serious long-term equity strategy.</p>
           <ul class="plan-list">
-            <li>Custom portfolio review</li>
-            <li>Advanced sector allocations</li>
-            <li>Quarterly rebalance calls</li>
+            <li>Full portfolio analytics</li>
+            <li>Advanced equity screening</li>
+            <li>Priority advisor access</li>
           </ul>
-          <a href="#cta" class="btn btn-primary">Most popular</a>
+          <a href="#login" class="btn btn-primary">Choose Growth</a>
         </article>
 
         <article class="price-card">
           <div class="plan-name">Private</div>
           <div class="price">$399<small>/mo</small></div>
-          <p>High-touch advisory for larger portfolios and more ambitious wealth goals.</p>
+          <p>High-touch guidance for serious wealth creation and diversification.</p>
           <ul class="plan-list">
-            <li>Dedicated strategist</li>
-            <li>Private market briefings</li>
-            <li>Executive-level planning</li>
+            <li>Dedicated strategy review</li>
+            <li>Custom portfolio modeling</li>
+            <li>Quarterly planning sessions</li>
           </ul>
-          <a href="#cta" class="btn btn-secondary">Book consultation</a>
+          <a href="#login" class="btn btn-secondary">Talk to us</a>
         </article>
       </div>
     </section>
 
-    <section class="shell">
+    <section class="shell" id="testimonials">
       <div class="section-head">
         <div>
-          <div class="section-kicker">Results</div>
+          <div class="section-kicker">Client results</div>
         </div>
-        <div class="section-title">Investors trust us to help them move with purpose.</div>
+        <div class="section-title">Investors stay because the process is clear, disciplined, and built for the long term.</div>
       </div>
 
       <div class="testimonials">
         <article class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>“The strategy made a massive difference in how I thought about long-term gains. Clear, calm, and actually useful.”</p>
+          <p>“EquitySecure helped me replace guesswork with structure. I finally understand how my portfolio is positioned and why.”</p>
           <div class="person">
-            <div class="avatar">MA</div>
+            <div class="avatar">AM</div>
             <div>
-              <strong>Marcus A.</strong>
-              <span>Founder</span>
+              <strong>Alicia M.</strong>
+              <span>Growth investor</span>
             </div>
           </div>
         </article>
 
         <article class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>“I was overwhelmed by the market. EquitySecure simplified the process and gave me a much stronger framework.”</p>
+          <p>“The strategy is practical, not hype-driven. We built a diversified plan and the decision-making process feels much calmer.”</p>
           <div class="person">
-            <div class="avatar">SL</div>
+            <div class="avatar">JT</div>
             <div>
-              <strong>Sophia L.</strong>
-              <span>Investor</span>
+              <strong>James T.</strong>
+              <span>Long-term holder</span>
             </div>
           </div>
         </article>
 
         <article class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>“Their focus on durable businesses and disciplined rebalancing helped me build confidence instead of chasing noise.”</p>
+          <p>“Their research and portfolio structure gave me a lot more confidence to invest with intention instead of emotion.”</p>
           <div class="person">
-            <div class="avatar">DL</div>
+            <div class="avatar">NS</div>
             <div>
-              <strong>Daniel L.</strong>
-              <span>Portfolio Manager</span>
+              <strong>Nina S.</strong>
+              <span>Portfolio builder</span>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <div class="cta-band shell" id="cta">
+    <section class="cta-band shell" id="cta">
       <div class="cta-box">
         <div>
-          <h3>Start building serious equity momentum today.</h3>
-          <p>Get a strategy designed around your goals, your timeline, and the growth opportunities you want to capture.</p>
+          <h3>Start building a stronger equity strategy with confidence.</h3>
+          <p>Join members who want clearer portfolio decisions, stronger discipline, and a smarter long-term plan.</p>
         </div>
-        <div class="header-actions" style="margin-left:auto;">
-          <a href="#pricing" class="btn btn-secondary">View plans</a>
-          <a href="mailto:hello@equitysecure.com" class="btn btn-primary">Book a call</a>
-        </div>
+        <a href="#login" class="btn btn-primary">Create account</a>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <div class="brand" aria-label="EquitySecure footer">
-        <span class="brand-mark">E</span>
-        <span>EquitySecure</span>
-      </div>
-      <span>© 2026 EquitySecure. Strategic market guidance for long-term investors.</span>
-      <span>hello@equitysecure.com</span>
+      <span>© 2026 EquitySecure</span>
+      <span>Built for disciplined wealth creation</span>
     </div>
   </footer>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const formMessage = document.getElementById('formMessage');
+
+    const demoUser = {
+      email: 'demo@equitysecure.com',
+      password: 'securepass123',
+      name: 'Alicia Morgan'
+    };
+
+    function setMessage(message, isSuccess = false) {
+      formMessage.textContent = message;
+      formMessage.classList.toggle('success', isSuccess);
+    }
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email || !password) {
+        setMessage('Please enter both your email and password.');
+        return;
+      }
+
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        setMessage('Please enter a valid email address.');
+        return;
+      }
+
+      if (password.length < 8) {
+        setMessage('Your password must be at least 8 characters long.');
+        return;
+      }
+
+      const isDemoLogin = email.toLowerCase() === demoUser.email && password === demoUser.password;
+      const userName = isDemoLogin ? demoUser.name : email.split('@')[0].replace(/[._-]/g, ' ');
+
+      if (!isDemoLogin && email.toLowerCase() !== demoUser.email) {
+        setMessage('We could not find an account for that email. Use the demo account below or create a new account.');
+        return;
+      }
+
+      if (!isDemoLogin && password !== demoUser.password) {
+        setMessage('Incorrect password. Please try again.');
+        return;
+      }
+
+      const safeName = userName.split(' ').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+      localStorage.setItem('equitysecureSession', JSON.stringify({ name: safeName, email, remember: document.getElementById('remember').checked }));
+
+      setMessage(`Welcome back, ${safeName}. You are now signed in.`, true);
+      window.location.hash = '#platform';
+      document.getElementById('email').value = '';
+      document.getElementById('password').value = '';
+    });
+
+    const savedSession = localStorage.getItem('equitysecureSession');
+    if (savedSession) {
+      try {
+        const parsed = JSON.parse(savedSession);
+        if (parsed && parsed.email) {
+          document.getElementById('email').value = parsed.email;
+        }
+      } catch (error) {
+        console.warn('Session data could not be parsed.', error);
+      }
+    }
+  </script>
 </body>
 </html>
